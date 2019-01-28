@@ -17,7 +17,7 @@ There are 5 defined Users. UserName / Password / ROLE are:
 	USER3 / USER3 / PAGE_3
 	USER4 / USER4 / PAGE_1, PAGE_2, PAGE_3
 
-These users will be created everytime the applications starts.
+These users will be created (if are deleted) everytime the applications starts.
 
 
 ###### API Calls
@@ -42,7 +42,7 @@ You can run it:
 1. If you know about Visual Studio, you can open .sln file and debug the project. It will open a Web with the Login Page.
 2. You can execute "IIS Installation\installation.bat". This batch will:
    - Ask for Admin permission
-   ~~- Install IIS (if you don't have it already)~~ --> Removed, your IIS...
+   - ~~Install IIS (if you don't have it already)~~ --> Removed, your IIS, you should install it (I will configure)
    - Ask for the %NAME% of the WEBAPI. This name will be the virtual directory that you will use to access http://localhost.com:80/%NAME%)
    - Create the AppPool with name %NAME%Pool (if you don't have it already)
    - Create the Site "Default Web Site" (if you don't have it already) pointing to "C:\inetpub\wwwroot". If you have it already, it will stop it. 
