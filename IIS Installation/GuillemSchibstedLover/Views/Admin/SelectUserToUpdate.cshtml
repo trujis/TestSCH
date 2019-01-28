@@ -1,0 +1,44 @@
+﻿@model WebApp.Models.SelectUserToUpdateViewModel
+@{
+    ViewBag.Title = "Admin Page (User Selection)";
+}
+
+@Html.Partial("PageContent", Model.Login)
+
+@{
+    List<SelectListItem> Users = new List<SelectListItem>();
+    if (Model.UsersAvailable == null)
+    {
+        Model.UsersAvailable = new List<string>();
+    }
+
+    foreach (string user in Model.UsersAvailable)
+    {
+        Users.Add(new SelectListItem
+        {
+            Text = user,
+            Value = user
+        });
+    }
+}
+
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    for (int i = 0; i < Model.UsersAvailable.Count; i++)
+    {
+        @Html.HiddenFor(model => Model.UsersAvailable[i])
+    }
+
+    <div class="form-group">
+        <span> @Html.LabelFor(a => a.UsersAvailable, new { @class = "col-md-2 control-label" }) </span>
+        <span> @Html.DropDownListFor(model => model.UserSelected, Users)</span>
+        <span> <input id="btnUpdate" type="submit" name="action" value="Modify" /></span>
+        <span> <input id="btnDelete" type="submit" name="action" value="Delete" /></span>
+    </div>
+}
+<br />
+<br />
+@Html.ValidationMessage("error")

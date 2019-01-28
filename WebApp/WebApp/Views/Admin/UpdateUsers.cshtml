@@ -1,0 +1,41 @@
+﻿@model WebApp.Models.UpdateUserViewModel
+@{
+    ViewBag.Title = "Admin Page (Update User)";
+}
+
+@Html.Partial("PageContent", Model.Login)
+
+
+<span> You are updating User <b> @Html.DisplayFor(a => a.UserSelected) </b> </span>
+
+<br />
+<br />
+
+@if (Model.IsUserSelected)
+{
+    using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <span> @Html.LabelFor(a => a.UserName, new { @class = "col-md-2 control-label" }) </span>
+            <span> @Html.TextBoxFor(a => a.UserName) </span>
+        </div>
+
+        <div class="form-group">
+            <span> @Html.LabelFor(a => a.Password, new { @class = "col-md-2 control-label" }) </span>
+            <span> @Html.PasswordFor(a => a.Password)</span>
+        </div>
+
+        <div class="form-group">
+            <span> @Html.LabelFor(a => a.Roles, new { @class = "col-md-2 control-label" }) </span>
+            <span> @Html.ListBoxFor(a => a.Roles, new MultiSelectList(Model.RolesAvailable), null)</span>
+        </div>
+
+        <input id="btnUpdate" type="submit" value="Crear" />
+    }
+    <br />
+    <br />
+}
+
+<br />
+<br />
+@Html.ValidationMessage("error")

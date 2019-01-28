@@ -1,0 +1,26 @@
+﻿@model WebApp.Models.LoginViewModel
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <span> @Html.LabelFor(a => a.UserName, new { @class = "col-md-2 control-label" }) </span>
+        <span> @Html.TextBoxFor(a => a.UserName) </span>
+    </div>
+
+    <div class="form-group">
+        <span> @Html.LabelFor(a => a.Password, new { @class = "col-md-2 control-label" }) </span>
+        <span> @Html.PasswordFor(a => a.Password)</span>
+    </div>
+
+    <input id="btnLogin" type="submit" value="Login" />
+
+    @Html.HiddenFor(a => a.RedirectionAction)
+    @Html.HiddenFor(a => a.RedirectionController)
+
+    <br />
+    <br />
+    @Html.ValidationMessage("error")
+
+
+}

@@ -1,0 +1,34 @@
+﻿@model WebApp.Models.LoginViewModel
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        @if (Model.ContainsRole(Users.Enums.RolesEnum.PAGE_1))
+        {
+            <li>@Html.ActionLink("Page_1", "Index", "Page_1")</li>
+        }
+        @if (Model.ContainsRole(Users.Enums.RolesEnum.PAGE_2))
+        {
+            <li>@Html.ActionLink("Page_2", "Index", "Page_2")</li>
+        }
+        @if (Model.ContainsRole(Users.Enums.RolesEnum.PAGE_3))
+        {
+            <li>@Html.ActionLink("Page_3", "Index", "Page_3")</li>
+        }
+        @if (Model.ContainsRole(Users.Enums.RolesEnum.ADMIN))
+        {
+            <li>@Html.ActionLink("Create Users", "Index", "CreateUser")</li>
+            <li>@Html.ActionLink("Update Users", "Index", "ModifyUser")</li>
+        }
+    </ul>
+</div>
+
+Hello <b>@Html.DisplayFor(a => a.UserName)</b>!! your are in <b>@ViewBag.Title</b>
+
+<br />
+<br />
+
+<input type="button" value="Close session" onclick="location.href='@Url.Action("Logout")'" />
+
+
+
+
