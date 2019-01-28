@@ -1,0 +1,234 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "cd9a4577-02ae-14dd-41f8-2fc309598a0d",
+			"name": "Schibsted",
+			"description": "",
+			"order": [
+				"40b23611-80cf-a5c3-60fc-4a9d5c09b42d",
+				"590afd48-6209-1054-be2e-cb88baf3d59d",
+				"6afdfe96-9f6c-d9a5-7896-dd520212e075",
+				"f607a41a-ac44-aa4c-3a54-56562c194b12"
+			],
+			"folders": [],
+			"folders_order": [],
+			"timestamp": 1548269117843,
+			"synced": false,
+			"remote_id": 0,
+			"owner": 0,
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"remoteLinkUpdatedAt": null,
+			"public": false,
+			"createdAt": 1548269117843,
+			"updatedAt": 1548631599137,
+			"write": true,
+			"published": false,
+			"favorite": false,
+			"permissions": {},
+			"syncedPermissions": {},
+			"events": [],
+			"variables": [],
+			"auth": null,
+			"requests": [
+				{
+					"id": "40b23611-80cf-a5c3-60fc-4a9d5c09b42d",
+					"headers": "",
+					"headerData": [],
+					"url": "{{url}}/api/user/",
+					"queryParams": [],
+					"events": [],
+					"pathVariables": {},
+					"pathVariableData": [],
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"auth": {
+						"basic": [
+							{
+								"key": "password",
+								"value": "ADMIN",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "ADMIN",
+								"type": "string"
+							}
+						],
+						"type": "basic"
+					},
+					"time": 1548642014416,
+					"name": "Get",
+					"description": "",
+					"collectionId": "cd9a4577-02ae-14dd-41f8-2fc309598a0d",
+					"responses": [],
+					"currentHelper": "basicAuth",
+					"helperAttributes": {
+						"id": "basic",
+						"username": "ADMIN",
+						"password": "ADMIN"
+					}
+				},
+				{
+					"id": "590afd48-6209-1054-be2e-cb88baf3d59d",
+					"headers": "Content-Type: application/json\n",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"enabled": true
+						}
+					],
+					"url": "{{url}}/api/user/",
+					"queryParams": [],
+					"events": [],
+					"pathVariables": {},
+					"pathVariableData": [],
+					"method": "POST",
+					"data": "{\n\t\"UserName\":\"UserTest\",\n\t\"Password\":\"UserTest\",\n\t\"Roles\": [3]\n}",
+					"dataMode": "raw",
+					"auth": {
+						"basic": [
+							{
+								"key": "password",
+								"value": "ADMIN",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "ADMIN",
+								"type": "string"
+							}
+						],
+						"type": "basic"
+					},
+					"time": 1548642001267,
+					"name": "Post",
+					"description": "",
+					"collectionId": "cd9a4577-02ae-14dd-41f8-2fc309598a0d",
+					"responses": [],
+					"currentHelper": "basicAuth",
+					"helperAttributes": {
+						"id": "basic",
+						"username": "ADMIN",
+						"password": "ADMIN"
+					}
+				},
+				{
+					"id": "6afdfe96-9f6c-d9a5-7896-dd520212e075",
+					"headers": "",
+					"headerData": [],
+					"url": "{{url}}/api/user/list",
+					"queryParams": [],
+					"events": [],
+					"pathVariables": {},
+					"pathVariableData": [],
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "ADMIN",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "ADMIN",
+								"type": "string"
+							}
+						]
+					},
+					"time": 1548641688675,
+					"name": "List Names",
+					"description": "",
+					"collectionId": "cd9a4577-02ae-14dd-41f8-2fc309598a0d",
+					"responses": [],
+					"currentHelper": "basicAuth",
+					"helperAttributes": {
+						"id": "basic",
+						"username": "ADMIN",
+						"password": "ADMIN"
+					}
+				},
+				{
+					"id": "f607a41a-ac44-aa4c-3a54-56562c194b12",
+					"headers": "",
+					"headerData": [],
+					"url": "{{url}}/api/user/USER2",
+					"queryParams": [],
+					"events": [],
+					"pathVariables": {},
+					"pathVariableData": [],
+					"method": "DELETE",
+					"data": null,
+					"dataMode": "params",
+					"auth": {
+						"basic": [
+							{
+								"key": "password",
+								"value": "ADMIN",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "ADMIN",
+								"type": "string"
+							}
+						],
+						"type": "basic"
+					},
+					"time": 1548641928184,
+					"name": "Delete",
+					"description": "",
+					"collectionId": "cd9a4577-02ae-14dd-41f8-2fc309598a0d",
+					"responses": [],
+					"currentHelper": "basicAuth",
+					"helperAttributes": {
+						"id": "basic",
+						"username": "ADMIN",
+						"password": "ADMIN"
+					}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "7bd7c9aa-fc8d-48bd-d11a-81d613946dfe",
+			"name": "Guillem_SchibstedIIS",
+			"values": [
+				{
+					"enabled": true,
+					"key": "url",
+					"value": "http://localhost:80/GuillemSchibstedLover",
+					"type": "text"
+				}
+			],
+			"team": null,
+			"timestamp": 1548641636174
+		},
+		{
+			"id": "f590d6a3-aa11-2381-2776-c63832d2b859",
+			"name": "VisualStudio",
+			"values": [
+				{
+					"enabled": true,
+					"key": "url",
+					"value": "http://localhost:53498/",
+					"type": "text"
+				}
+			],
+			"team": null,
+			"timestamp": 1548641662344
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}

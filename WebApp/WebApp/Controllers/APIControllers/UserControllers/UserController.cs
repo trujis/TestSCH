@@ -40,11 +40,28 @@ namespace WebApp.Controllers
         [HttpGet]
         public IHttpActionResult List()
         {
+            if (!IsAdminRequesting())
+            {
+                return Unauthorized();
+            }
+
             userService = new UserService(); //IOC
 
             var user = userService.ListNames();
 
             return Ok(user);
+        }
+
+
+        private bool IsAdminRequesting()
+        {
+            bool response = false;
+
+            var user = GetUser();
+
+            response = (user != null && user.ContainsRole(Users.Enums.RolesEnum.ADMIN));
+
+            return response;
         }
 
 
@@ -66,6 +83,11 @@ namespace WebApp.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody] User user)
         {
+            if (!IsAdminRequesting())
+            {
+                return Unauthorized();
+            }
+
             if (user == null)
             {
                 return StatusCode(HttpStatusCode.BadRequest);
@@ -97,6 +119,11 @@ namespace WebApp.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(string userName)
         {
+            if (!IsAdminRequesting())
+            {
+                return Unauthorized();
+            }
+
             if (string.IsNullOrEmpty(userName))
             {
                 return StatusCode(HttpStatusCode.BadRequest);
@@ -109,27 +136,5 @@ namespace WebApp.Controllers
                 return Ok(true);
             }
         }
-
-        /*
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }*/
     }
 }
