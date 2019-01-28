@@ -6,6 +6,7 @@ All calls to the API are done with HTTP basic authentication, with user:password
 Users and Roles are stored in Disk using CacheService class, in folder %TEMP_FOLDER%\SchibstedLover\XXX.json
 
 You can create all users you want, and every user can have one or multiple Roles. Your created Users won't be lost in new startups.
+
 When you loggin with one user, you will see all the pages that you can access. If you go to a page that requires a Role that you don't have, a fantastic "HTTP Error 403.0 - Forbidden" will appear :)
 
 
@@ -43,13 +44,13 @@ You can run it:
 2. You can execute "IIS Installation\installation.bat". This batch will:
    - Ask for Admin permission
    - ~~Install IIS (if you don't have it already)~~ --> Removed, your IIS, you should install it (I will configure)
-   - Ask for the %NAME% of the WEBAPI. This name will be the virtual directory that you will use to access http://localhost.com:80/%NAME%)
-   - Create the AppPool with name %NAME%Pool (if you don't have it already)
-   - Create the Site "Default Web Site" (if you don't have it already) pointing to "C:\inetpub\wwwroot". If you have it already, it will stop it. 
-   - Create the Virtual Directory %NAME% in "Default Web Site" (if you don't have it already) 
-   - Copy all binaries needed in "C:\inetpub\wwwroot\SchibstedLover"
+   - The name for the Virtual Directory will be **"GuillemSchibstedLover"**
+   - Create the AppPool with name **"GuillemSchibstedLoverPool"** (if you don't have it already)
+   - Create the Site **"Default Web Site"** (if you don't have it already) pointing to **"C:\inetpub\wwwroot"**. If you have it already, it will stop it. 
+   - Create the Virtual Directory **GuillemSchibstedLover** in "Default Web Site" (if you don't have it already) 
+   - Copy all binaries needed in **"C:\inetpub\wwwroot\GuillemSchibstedLover"**
    - Start site "Default Web Site"
-3. You can install it manually if you do not trust the batch (I will understand). In "IIS Installation\SchibstedLover" are the binaries.
+3. You can install it manually if you do not trust the batch (I will understand). In **"IIS Installation\GuillemSchibstedLover"** are the binaries.
 
 
 ## About tests
@@ -68,3 +69,5 @@ I was having problems using Runtime Cache with Roles. Because of this, That's wh
 One library is added intentionally... Moq (in tests projects)
 
 I didn't use C# Roles... to use them I had to add a library "Microsoft.AspNet.Identity.EntityFramework", with dependencies with EntityFramework and Microsoft.Asp.Net.Identity.Core... I decided not to use it, because of the requirements.
+
+**User Edition are not finished...**
