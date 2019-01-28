@@ -24,18 +24,26 @@ These users will be created (if are deleted) everytime the applications starts.
 ###### API Calls
 There are X API Calls that you can run over Web or using Postman / Fiddler. All of them uses basic auth, so, users MUST exists.
 
-GET: 	http://%HOST%/api/user (no parameters)
-	This will get the User (if exists) that matches UserName / Password used in Basic Auth.
-	If User does not exists, will return a 401 status
-POST:	http://%HOST%/api/user (using a User as body parameter)
-	This will create the User (if it doesn't exists). In that case, it will return an HTTP.Conflict (409) error.
-GET:	http://%HOST%/api/user/list (no parameters)
-	ADMIN user will not be returned.
-	This will list all UserNames available in "DB".
-DELETE:	http://%HOST%/api/user/{UserName}
-	This will delete the given UserName from "DB"
-	ADMIN user is not available to be deleted.
-	This call always will return true, in order to not show if an user is created or not.
+- GET: 	http://%HOST%/api/user (no parameters)
+  - This will get the User (if exists) that matches UserName / Password used in Basic Auth.
+  - If User does not exists, will return a 401 status
+
+- POST:	http://%HOST%/api/user (using a User as body parameter)
+  - This will create the User (if it doesn't exists). In that case, it will return an HTTP.Conflict (409) error.
+  - This call can be performed only by an ADMIN Role
+  
+- GET:	http://%HOST%/api/user/list (no parameters)
+  - ADMIN user will not be returned.
+  - This will list all UserNames available in "DB".
+  - This call can be performed only by an ADMIN Role
+  
+- DELETE:	http://%HOST%/api/user/{UserName}
+  - This will delete the given UserName from "DB"
+  - ADMIN user is not available to be deleted.
+  - This call always will return true, in order to not show if an user is created or not.
+  - This call can be performed only by an ADMIN Role
+	
+In folder "IIS Installation", there is a backup of PostMan with all the API Calls
 	
 	
 ## How To Run
