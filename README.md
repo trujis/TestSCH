@@ -2,9 +2,12 @@
 
 ## How does this works
 All calls to the API are done with HTTP basic authentication, with user:password used in Login Page. These are managed in UserAuthorization class.
+
 Users and Roles are stored in Disk using CacheService class, in folder %TEMP_FOLDER%\SchibstedLover\XXX.json
+
 You can create all users you want, and every user can have one or multiple Roles. Your created Users won't be lost in new startups.
 When you loggin with one user, you will see all the pages that you can access. If you go to a page that requires a Role that you don't have, a fantastic "HTTP Error 403.0 - Forbidden" will appear :)
+
 
 ###### Default Users
 There are 5 defined Users. UserName / Password / ROLE are:
@@ -13,10 +16,13 @@ There are 5 defined Users. UserName / Password / ROLE are:
 	USER2 / USER2 / PAGE_2
 	USER3 / USER3 / PAGE_3
 	USER4 / USER4 / PAGE_1, PAGE_2, PAGE_3
+
 These users will be created everytime the applications starts.
-	
+
+
 ###### API Calls
 There are X API Calls that you can run over Web or using Postman / Fiddler. All of them uses basic auth, so, users MUST exists.
+
 GET: 	http://%HOST%/api/user (no parameters)
 	This will get the User (if exists) that matches UserName / Password used in Basic Auth.
 	If User does not exists, will return a 401 status
@@ -45,21 +51,20 @@ You can run it:
    - Start site "Default Web Site"
 3. You can install it manually if you do not trust the batch (I will understand). In "IIS Installation\SchibstedLover" are the binaries.
 
+
 ## About tests
 I know that these needs A LOT more tests... My fault :(
+
 Some of them, are done using Moq library.
+
 
 ## Consider this
 Session time is up to 5 minutes. You can change this modifying 'sessionState' value on Web.Config.
+
 No IoC is used. Code would be better using it.
+
 I was having problems using Runtime Cache with Roles. Because of this, That's why I decided to deactivate it and only use Disk Cache (worst performance).
+
 One library is added intentionally... Moq (in tests projects)
+
 I didn't use C# Roles... to use them I had to add a library "Microsoft.AspNet.Identity.EntityFramework", with dependencies with EntityFramework and Microsoft.Asp.Net.Identity.Core... I decided not to use it, because of the requirements.
-
-
-
-
-
-
-
-###### The smallest heading
